@@ -99,6 +99,7 @@ li div:hover{
 
 .right,.right-focus{
     width:12px;
+    height:20px;
     background:url(sprite.png) no-repeat -42px -63px;
     background-color:transparent;
 }

@@ -30,7 +30,7 @@ result(); // 1
 <h3>二、第二部分</h3>
 <p>是若干图片：</p>
 <div>
-<img src="../feed.png" alt="feed"/>
+<img src="feed.png" alt="feed"/>
 </div>
 <br/>
 <h3>三、第三部分</h3>
@@ -88,6 +88,6 @@ ORDER BY "Project1"."SORT_ID" DESC
 <p>4、这个问题只是暂时解决，仍然存疑，待完善。主要参考这篇：</p>
 <p><a href="http://blogs.planetsoftware.com.au/paul/archive/2010/09/24/ef4-part-8-database-agnostic-linq-to-entities.aspx" alt="ef4 part 8: database agnostic linq to entities">《ef4 part 8: database agnostic linq to entities》</a></p>
 <div class="postDesc">
-<img src="../feed.png" alt="feed"/>
+<img src="feed.png" alt="feed"/>
 posted @ 2014-02-27
 </div>', now());
