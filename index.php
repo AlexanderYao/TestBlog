@@ -26,6 +26,7 @@ function addNewTabOrActivate(target){
 }
 
 var activeTab = null;
+var welcome = '欢迎来到我的博客，我喜欢Tab风格，讨厌scrolling，你呢？';
 function activateTab(id){
     if(id==activeTab) return;
     var nodeList = id.parentNode.childNodes;
@@ -37,7 +38,7 @@ function activateTab(id){
 
     var tag = id.attributes["tag"].value;
     if(tag.indexOf(".html") > -1){
-        document.getElementById("blog").innerHTML = '起始页';
+        document.getElementById("blog").innerHTML = welcome;
     } else {
         showBlog(tag);
     }
@@ -70,9 +71,9 @@ function closeTab(target){
 }
 </script>
 </head>
-<body>
+<body onload="activateTab(document.getElementById('startPage'))">
     <div class="header">
-        <div class="logo"><h2><a href="default.php" target="_self">大尧-AlexanderYao</a></h2></div>
+        <div class="logo"><h2><a href="index.php" target="_self">大尧-AlexanderYao</a></h2></div>
         <div class="tagline">读书、学习、思考、笃行</div>
         <div class="banner"></div>
     </div>
@@ -90,7 +91,7 @@ foreach($blogs as $blog){
         </ul>
     </div>
     <div class="content" id="content">
-        <div class="tabs"><div class="activeTab" tag="start.html">
+        <div class="tabs"><div id="startPage" class="activeTab" tag="start.html">
             <div class="left"></div>
             <div class="center" onclick="activateTab(this.parentNode)">起始页</div>
         </div></div>
