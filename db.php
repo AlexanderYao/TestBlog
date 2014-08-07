@@ -35,6 +35,10 @@ class DB
     {
         return $this->_db->query($sql);
     }
+    
+    function escape($sql){
+        return $this->_db->real_escape_string($sql);
+    }
 
     function __destruct(){
         $this->_db->close();

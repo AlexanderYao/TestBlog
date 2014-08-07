@@ -6,7 +6,8 @@
 <link rel="stylesheet" type="text/css" href="sunburst.css"/>
 <script type="text/javascript" src="string.js"></script>
 <script type="text/javascript" src="prettify.js"></script>
-<script language="javascript" type="text/javascript">
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<script type="text/javascript">
 function addNewTabOrActivate(target){
     var targetNode = null;
     var nodeList = document.getElementsByClassName("tabs")[0].childNodes;
@@ -26,7 +27,7 @@ function addNewTabOrActivate(target){
 }
 
 var activeTab = null;
-var welcome = '欢迎来到我的博客，我喜欢Tab风格，讨厌scrolling，你呢？';
+var welcome = '欢迎来到我的博客，共同交流、共同进步。';
 function activateTab(id){
     if(id==activeTab) return;
     var nodeList = id.parentNode.childNodes;
@@ -45,15 +46,14 @@ function activateTab(id){
 }
 
 function showBlog(id){
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function(){
-        if(request.readyState == 4 && request.status == 200){
-            document.getElementById("blog").innerHTML = request.responseText;
-            prettyPrint();
-        }
-    }
-    request.open("GET","blog/blog_controller.php?id="+id);
-    request.send();
+    $.post("blog/blog_controller.php",
+        {id:id,method:"get"},
+        function(data,status){
+            if(status == "success"){
+                $("#blog").html(data);
+                prettyPrint();
+            }
+        });
 }
 
 function focusRight(target){

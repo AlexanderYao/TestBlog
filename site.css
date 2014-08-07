@@ -120,3 +120,38 @@ li div:hover{
     right:0;
     overflow:auto;
 }
+
+/*edit.php*/
+input{
+    color:DarkSlateGray;
+    padding:0;
+    margin:0;
+    border:1px;
+    border-style:inset;
+    font-size:small;
+    font-family:'Microsoft YaHei';
+}
+
+.edit-left{
+    width:5%;
+    display:inline-block;
+}
+
+.edit-row input{
+    width:90%;
+}
+
+/*admin.php*/
+table,th,td{
+    border:solid black;
+}
+table{
+    border-width:1px 0 0 1px;
+}
+th,td{
+    border-width:0 1px 1px 0;
+}
+.selected{
+    background-color:DarkSlateGray;
+    color:white;
+}

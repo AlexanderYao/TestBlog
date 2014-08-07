@@ -15,7 +15,7 @@ class Util
     function log($string)
     {
         $s = sprintf("%s\n",$string);
-        return error_log($s,3,"/var/www/AlexanderYao/error.log");
+        return error_log($s,3,"/var/tmp/AlexanderYao/error.log");
     }
 
     function log_format(/*format[,$arg1...$argN]*/)
