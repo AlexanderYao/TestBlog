@@ -124,12 +124,48 @@ li div:hover{
 /*edit.php*/
 input{
     color:DarkSlateGray;
-    padding:0;
-    margin:0;
+    background-color:white;
     border:1px;
     border-style:inset;
     font-size:small;
     font-family:'Microsoft YaHei';
+}
+
+input[type="text"]{
+    border-style:inset;
+}
+
+input[type="button"]{
+    border-style:solid;
+    background-color:WhiteSmoke;
+    cursor:pointer;
+}
+
+input[type="button"]:hover{
+    background-color:Gainsboro;
+}
+
+input[type="checkbox"]{
+    cursor:pointer;
+}
+
+.edit-tool{
+    height:32px;
+}
+
+.edit-tool-left{
+    float:left;
+}
+
+.edit-tool-right{
+    float:right;
+}
+
+.edit-tool-left input{
+    padding:0;
+    margin:0;
+    border-style:none;
+    background-color:white;
 }
 
 .edit-left{
@@ -139,6 +175,17 @@ input{
 
 .edit-row input{
     width:90%;
+}
+
+textarea,#blogPreview{
+    width:49%;
+    height:590px; 
+}
+
+#blogPreview{
+    overflow:auto;
+    display:inline-block;
+    border:1px solid rgb(169,169,169);
 }
 
 /*admin.php*/
