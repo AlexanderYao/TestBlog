@@ -7,7 +7,11 @@ ftp -in $host << END
 quote USER $user
 quote PASS $password
 cd domains/alexanderyao.com/public_html
-put $1
+prompt
+mput *
+cd blog/
+lcd blog/
+mput *
 bye
 END
 exit 0

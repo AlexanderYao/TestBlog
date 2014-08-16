@@ -42,6 +42,12 @@ if(isset($_GET["id"])){
 <textarea rows="35" cols="100" id="blogEdit" onKeyDown="savePos(this)" onKeyUp="savePos(this)" onMouseDown="savePos(this)" onMouseUp="savePos(this)" onFocus="savePos(this)"><?php if(isset($blog)) echo $blog->_content; ?></textarea>
 <div id="blogPreview"></div>
 </div>
+<div id="divUpload">
+<form id="myupload" action="upload.php" method="post" enctype="multipart/form-data">
+<input type="file" name="file">
+<input type="submit" value="submit">
+</form>
+</div>
 <script type="text/javascript">
 var start = null;
 var end = null;
@@ -69,8 +75,14 @@ $("#code").click(function(){
     end = null;
 });
 
+$("#divUpload").hide();
+
 $("#pic").click(function(){
     //上传图片，并插入到光标处        
+    var picPos = $("#pic").position();
+    $("#divUpload").css("left",picPos.left);
+    $("#divUpload").css("top",picPos.top+$("#pic").height());
+    $("#divUpload").show();
 });
 
 function savePos(textArea){
